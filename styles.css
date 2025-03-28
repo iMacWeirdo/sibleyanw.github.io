@@ -1,27 +1,61 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f7f7f7;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    background: #ff9900;
-    padding: 20px;
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000; /* Black background for digital signage look */
     color: white;
 }
 
-#time-display, #weather-display {
-    margin: 20px;
+.container {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(30, 30, 30, 0.8); /* Slight transparency for a softer look */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 153, 0, 0.5); /* Orange glow effect */
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #ff9900; /* A&W orange */
+}
+
+.time-display {
     font-size: 24px;
+    margin: 20px 0;
 }
 
 .slideshow-container {
     position: relative;
-    max-width: 600px;
-    margin: auto;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.promotions-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ff9900;
 }
 
 .slide {
     width: 100%;
     height: auto;
+}
+
+.weather-display {
+    font-size: 24px;
+    margin: 20px 0;
 }
