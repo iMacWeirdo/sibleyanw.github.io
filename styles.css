@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+header {
+    background: #ff9900;
+    padding: 20px;
+    color: white;
+}
+
+#time-display, #weather-display {
+    margin: 20px;
+    font-size: 24px;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.slide {
+    width: 100%;
+    height: auto;
+}
