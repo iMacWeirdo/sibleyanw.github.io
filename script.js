@@ -1,6 +1,7 @@
 const API_KEY = 'd25f825b4fe9301bc9557b613db79ea7';
 const LATITUDE = '43.402649657482286';
 const LONGITUDE = '-95.72192488274663';
+let slideIndex = 0;
 
 function updateWeather() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${API_KEY}&units=metric`)
@@ -26,12 +27,4 @@ function showSlides() {
     }
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}    
-    slides[slideIndex - 1].style.display = "block";  
-    setTimeout(showSlides, 5000); // Change image every 5 seconds
-}
-
-window.onload = function() {
-    updateWeather();
-    setInterval(updateTime, 1000);
-    showSlides();
-};
+    slides[slideIndex - 1].style.display = "block
