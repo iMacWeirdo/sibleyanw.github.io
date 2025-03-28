@@ -1,9 +1,9 @@
-const API_KEY = 'YOUR_OPENWEATHERMAP_API_KEY';
-const CITY_ID = 'YOUR_CITY_ID'; // Replace with the appropriate city ID or use coordinates
-let slideIndex = 0;
+const API_KEY = 'd25f825b4fe9301bc9557b613db79ea7';
+const LATITUDE = '43.402649657482286';
+const LONGITUDE = '-95.72192488274663';
 
 function updateWeather() {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?id=${CITY_ID}&appid=${API_KEY}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${API_KEY}&units=metric`)
         .then(response => response.json())
         .then(data => {
             const weatherDisplay = document.getElementById('weather-display');
