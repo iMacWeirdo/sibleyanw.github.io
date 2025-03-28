@@ -5,12 +5,21 @@ let slideIndex = 0;
 
 function updateWeather() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${API_KEY}&units=metric`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
             const weatherDisplay = document.getElementById('weather-display');
             weatherDisplay.innerHTML = `Weather: ${data.weather[0].description}, Temperature: ${data.main.temp}°C`;
         })
-        .catch(error => console.error('Error fetching weather data:', error));
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+            const weatherDisplay = document.getElementById('weather-display');
+            weatherDisplay.innerHTML = 'Unable to load weather data.';
+        });
 }
 
 function updateTime() {
@@ -27,4 +36,4 @@ function showSlides() {
     }
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}    
-    slides[slideIndex - 1].style.display = "block
+    slides[slideIndex - 1].style.display = "
